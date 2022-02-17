@@ -1,16 +1,23 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.2648f574.css",
-    "main.js": "/Portfolio/static/js/main.a37f1050.js",
+    "main.css": "/Portfolio/static/css/main.6db51c8d.css",
+    "main.js": "/Portfolio/static/js/main.7db430d2.js",
     "static/js/787.1ed0c42c.chunk.js": "/Portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/me.png": "/Portfolio/static/media/me.9e4e43c94717dd1b8bf1.png",
+    "static/media/LOL.png": "/Portfolio/static/media/LOL.cda94ebf6c8cce0624d1.png",
+    "static/media/korea.jpg": "/Portfolio/static/media/korea.94c5ca3847ffa0c0f0fd.jpg",
+    "static/media/code.png": "/Portfolio/static/media/code.1507368fc04572fbce6e.png",
+    "static/media/corvette.png": "/Portfolio/static/media/corvette.3d0cbb5ceb3d06bd7422.png",
+    "static/media/guitare.jpg": "/Portfolio/static/media/guitare.88fe8874a45eade24c75.jpg",
+    "static/media/react.png": "/Portfolio/static/media/react.efccb116e443bbf6ffa6.png",
+    "static/media/webLanguage.png": "/Portfolio/static/media/webLanguage.aab59987a376edab2034.png",
     "index.html": "/Portfolio/index.html",
-    "main.2648f574.css.map": "/Portfolio/static/css/main.2648f574.css.map",
-    "main.a37f1050.js.map": "/Portfolio/static/js/main.a37f1050.js.map",
+    "main.6db51c8d.css.map": "/Portfolio/static/css/main.6db51c8d.css.map",
+    "main.7db430d2.js.map": "/Portfolio/static/js/main.7db430d2.js.map",
     "787.1ed0c42c.chunk.js.map": "/Portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2648f574.css",
-    "static/js/main.a37f1050.js"
+    "static/css/main.6db51c8d.css",
+    "static/js/main.7db430d2.js"
   ]
 }
