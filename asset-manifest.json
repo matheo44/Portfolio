@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.c4a71c2d.css",
-    "main.js": "/Portfolio/static/js/main.0899ea6f.js",
+    "main.css": "/Portfolio/static/css/main.07bb5c9f.css",
+    "main.js": "/Portfolio/static/js/main.a20ca9d2.js",
     "static/js/787.1ed0c42c.chunk.js": "/Portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/me.png": "/Portfolio/static/media/me.9e4e43c94717dd1b8bf1.png",
     "static/media/LOL.png": "/Portfolio/static/media/LOL.cda94ebf6c8cce0624d1.png",
@@ -13,12 +13,12 @@
     "static/media/guitare.jpg": "/Portfolio/static/media/guitare.88fe8874a45eade24c75.jpg",
     "static/media/logoGit.png": "/Portfolio/static/media/logoGit.66e44d1f3fea18f220f4.png",
     "index.html": "/Portfolio/index.html",
-    "main.c4a71c2d.css.map": "/Portfolio/static/css/main.c4a71c2d.css.map",
-    "main.0899ea6f.js.map": "/Portfolio/static/js/main.0899ea6f.js.map",
+    "main.07bb5c9f.css.map": "/Portfolio/static/css/main.07bb5c9f.css.map",
+    "main.a20ca9d2.js.map": "/Portfolio/static/js/main.a20ca9d2.js.map",
     "787.1ed0c42c.chunk.js.map": "/Portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4a71c2d.css",
-    "static/js/main.0899ea6f.js"
+    "static/css/main.07bb5c9f.css",
+    "static/js/main.a20ca9d2.js"
   ]
 }
