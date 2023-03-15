@@ -1,3 +1,3 @@
-change color of donut text
-make an english move
-creat a boton like page
+change color of donut text --> DONE
+make the translation in english --> Canceled
+creat a boton like page --> TODO
