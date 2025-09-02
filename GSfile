@@ -1,0 +1,55 @@
+function surligne(cell) {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange(cell).activate(); // selection of the cell
+
+  spreadsheet.getActiveRangeList().setBackground('#ffff00'); //set background cell's by yellow
+  
+};
+
+function main(){
+  // seul modification à aporter si le document change.
+  const colone = 'B'; // colone de la séléction
+  var ligne = 2; // ligne du début prendre le n+1 de la première valeur
+
+  var color  = false;
+
+
+while(true){
+  
+    var spreadsheet = SpreadsheetApp.getActive();
+  
+  var previusNbCmd = spreadsheet.getRange(colone+(ligne-1)).getValue();
+  
+  var nbCmd = spreadsheet.getRange(colone+ligne).getValue();
+
+ if( nbCmd ){
+  
+  if(nbCmd === previusNbCmd ){
+    
+    if(color){
+      surligne(colone+ligne);
+      console.log("surligné");
+    }
+
+
+  }else{
+    
+    if(color === true){
+      
+      console.log(color)
+      color = false;
+      
+    }
+    
+    else{
+      surligne(colone+ligne);
+      color = true;
+    }
+  }
+  ligne = ligne + 1;
+  
+ }
+ else{break}
+}
+};
+
