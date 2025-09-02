@@ -1,55 +1,65 @@
-function surligne(cell) {
-  var spreadsheet = SpreadsheetApp.getActive();
-  spreadsheet.getRange(cell).activate(); // selection of the cell
+Sub surligne(cellRange As Range)
+    ' Version optimisée sans sélection
+    With cellRange.Interior
+        .Pattern = xlSolid
+        .Color = RGB(255, 255, 0) ' Jaune
+    End With
+End Sub
 
-  spreadsheet.getActiveRangeList().setBackground('#ffff00'); //set background cell's by yellow
-  
-};
-
-function main(){
-  // seul modification à aporter si le document change.
-  const colone = 'B'; // colone de la séléction
-  var ligne = 2; // ligne du début prendre le n+1 de la première valeur
-
-  var color  = false;
-
-
-while(true){
-  
-    var spreadsheet = SpreadsheetApp.getActive();
-  
-  var previusNbCmd = spreadsheet.getRange(colone+(ligne-1)).getValue();
-  
-  var nbCmd = spreadsheet.getRange(colone+ligne).getValue();
-
- if( nbCmd ){
-  
-  if(nbCmd === previusNbCmd ){
+Sub main()
+    ' Seule modification à apporter si le document change
+    Dim colone As String
+    Dim ligne As Long ' ✅ Long au lieu de Integer
+    Dim color As Boolean
+    Dim spreadsheet As Worksheet
+    Dim previusNbCmd As Variant
+    Dim nbCmd As Variant
     
-    if(color){
-      surligne(colone+ligne);
-      console.log("surligné");
-    }
-
-
-  }else{
+    colone = "B" ' colonne de la sélection
+    ligne = 2 ' ligne du début
+    color = False
     
-    if(color === true){
-      
-      console.log(color)
-      color = false;
-      
-    }
+    ' Définir la feuille active
+    Set spreadsheet = ActiveSheet
     
-    else{
-      surligne(colone+ligne);
-      color = true;
-    }
-  }
-  ligne = ligne + 1;
-  
- }
- else{break}
-}
-};
-
+    ' Sécurité pour éviter les boucles infinies
+    Dim maxIterations As Long
+    maxIterations = 100000 ' Limite de sécurité
+    
+    Do While ligne <= maxIterations
+        ' Vérifier si la cellule existe
+        If ligne > spreadsheet.Rows.Count Then Exit Do
+        
+        ' Obtenir les valeurs des cellules
+        previusNbCmd = spreadsheet.Range(colone & (ligne - 1)).Value
+        nbCmd = spreadsheet.Range(colone & ligne).Value
+        
+        ' Vérifier si la cellule n'est pas vide
+        If IsError(nbCmd) Then
+            ' Gérer les cellules avec erreur
+            Exit Do
+        ElseIf Not IsEmpty(nbCmd) And nbCmd <> "" Then
+            
+            If nbCmd = previusNbCmd Then
+                If color Then
+                    surligne spreadsheet.Range(colone & ligne) ' ✅ Feuille spécifiée
+                    Debug.Print "surligné ligne " & ligne
+                End If
+            Else
+                If color = True Then
+                    Debug.Print "Changement couleur: " & color
+                    color = False
+                Else
+                    surligne spreadsheet.Range(colone & ligne) ' ✅ Feuille spécifiée
+                    color = True
+                End If
+            End If
+            
+            ligne = ligne + 1
+        Else
+            Exit Do
+        End If
+    Loop
+    
+    Debug.Print "Traitement terminé à la ligne " & ligne - 1
+End Sub
